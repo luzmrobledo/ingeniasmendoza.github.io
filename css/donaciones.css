@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+/*Reseteamos valores predefinidos del css*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    background-image: linear-gradient(
+        rgba(23, 23, 23, 0.7),
+        rgba(23, 23, 23, 0.7)),
+        url(img/mendoza.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+width: 3rem ;
+height: 3rem;
+border-radius: 50%;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFDFC;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #1062a4;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 15px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content h1 {
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #c5c5c5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+    text-align: justify;
+} 
+
+#form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+label {
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/*ESTILOS PARA EL FOOTER*/
+footer{
+    height: max-content;
+    width: 100%;
+}
+
+.footer{
+    position: relative;
+    width: 100%;
+    background:#1f6cab;
+    min-height: max-content;
+    padding: 20px 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.social-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 5px;
+    flex-wrap: wrap;
+}
+
+.icon-elem{
+    list-style: none;
+}
+
+.icon{
+    color: #c7dced;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.incon:hover{
+    transform: translateY(-10px);
+}
+
+.menu{
+    display: flex; /*movemos los elementos de la lista en una fila*/
+    justify-content: space-between; /*centramos los elementos*/
+    position: relative;
+    align-items: center; /*centramos los elementos*/
+    margin: 10px 0;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.menu-elem{
+    list-style: none; /*le quitamos los puntos a la lista*/
+}
+.menu-icon{ /*Editamos la lista del footer Inicio Equipo..*/
+    color: #c7dced;;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.75;
+    transition: 0.3s;
+}
+.text{
+    color: #c7dced;;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+/*Movimiento para los iconos del footer*/
+.icon:hover{
+  transform: translateY(-10px);  /*movimiento de los iconos hacia arriba*/
+}
+
+.menu-icon:hover{
+    opacity: 1;
+}
+
+/* Media Queries para Responsiveness */
+@media (max-width: 991px) {
+    .menu {
+        padding: 30px;
+    }
+    .menu label {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+        flex-direction: column;
+    }
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar ul li {
+        width: 100%;
+    }
+    #menu-toggle:checked + .menu-icon + .navbar {
+        display: flex;
+    }
+    .header {
+        min-height: 50vh;
+    }
+    .header-content {
+        padding: 100px 30px;
+    }
+    .header-content p {
+        padding: 0;
+    }
+    .nosotras-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .informacion {
+        padding: 30px;
+    }
+    .proyectos-group {
+        flex-direction: column;
+    }
+    .general {
+        flex-direction: column;
+    }
+    .general-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    .general-2, .general-3 {
+        display: none;
+    }
+}
+@media(min-width:992px){
+    .menu{
+        justify-content: center;
+        }
+    }

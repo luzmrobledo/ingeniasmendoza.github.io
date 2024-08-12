@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+/*Reseteamos valores predefinidos del css*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    background-image: linear-gradient(
+        rgba(23, 23, 23, 0.7),
+        rgba(23, 23, 23, 0.7)),
+        url(img/mendoza.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFDFC;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #1062a4;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 15px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content h1 {
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #c5c5c5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+} 
+
+#form-container {
+    background-color: #ffffff; /* Fondo del formulario */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+label {
+    color: #333333; /* Color del texto de las etiquetas */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50; /* Color del botón */
+    color: white; /* Color del texto del botón */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black; /* Color del botón al pasar el ratón */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    #form-container {
+        max-width: 90%; /* Reducir el ancho máximo del formulario */
+        padding: 15px;
+    }
+
+    button {
+        padding: 8px 16px; /* Ajustar el padding del botón */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*GENERAL*/
+h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: #323337;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p{
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px 0;
+}
+
+footer{
+    height: max-content;
+    width: 100%;
+}
+
+/*ESTILOS PARA EL FOOTER*/
+.footer{
+    position: relative;
+    width: 100%;
+    background:#1f6cab;
+    min-height: max-content;
+    padding: 20px 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.social-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 5px;
+    flex-wrap: wrap;
+}
+
+.icon-elem{
+    list-style: none;
+}
+
+.icon{
+    color: #c7dced;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.incon:hover{
+    transform: translateY(-10px);
+}
+
+.menu{
+    display: flex; /*movemos los elementos de la lista en una fila*/
+    justify-content: center; /*centramos los elementos*/
+    position: relative;
+    align-items: center; /*centramos los elementos*/
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+.menu-elem{
+    list-style: none; /*le quitamos los puntos a la lista*/
+}
+.menu-icon{ /*Editamos la lista del footer Inicio Equipo..*/
+    color: #c7dced;;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.75;
+    transition: 0.3s;
+}
+.text{
+    color: #c7dced;;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+
+/*Movimiento para los iconos del footer*/
+.icon:hover{
+  transform: translateY(-10px);  /*movimiento de los iconos hacia arriba*/
+}
+
+.menu-icon:hover{
+    opacity: 1;
+}
+
+@media(max-width:991px){
+    .menu{
+        padding: 30px;
+
+        }
+    .menu label{
+        display: initial;
+    }
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+    }   
+    .menu-icono{
+            width: 15px;
+    }
+    .menu .navbar ul li{
+        width: 100%;
+    }   
+    #menu:checked ~ .navbar{
+        display: initial;
+    }   
+
+    .header{
+        min-height: 0vh;
+    } 
+    .header-content{
+        padding: 100px 30px;
+    }     
+    .header-content p{
+        padding: 0;
+    }   
+    .mendoza {
+    padding: 30px;
+    }
+    .mendoza-content h2 {
+        padding: 0;
+    }
+    .txt-p {
+        padding: 0;
+    }
+
+    .nosotras-group{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .mendoza-img{
+        display: none;
+    }
+
+    .informacion{
+        padding: 30px;
+    }
+
+    .informacion-content p {
+        padding: 0;
+    }
+
+    .proyectos-group{
+        flex-direction: column;
+    }
+
+    .proyectos-1{
+        margin-bottom: 25px;
+    }
+
+    .general {
+        flex-direction: column;
+    }
+
+    .general-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    .general-2, .general-3  {
+        display: none;
+    }
+
+}

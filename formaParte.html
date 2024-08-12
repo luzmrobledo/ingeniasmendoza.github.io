@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logoIngenias.png" type="image/x-icon">
+    <title>Formulario de voluntariado</title>
+    <link rel="stylesheet" href="css/formaParte.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a href="./index.html" alt="Logo ingenias Mendoza">
+                <img class="logo" src="img/logoIngenias.png" alt="logo">
+            </a>
+            <input type="checkbox" id="menu"/>
+            <label for="menu">
+                <img src="img/menu.png" class="menu-incono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./embalses.html">Embalses</a></li>
+                    <li><a href="./consejos.html">Consejos</a></li>
+                    <li><a href="./novedades.html">Novedades</a></li>
+                    <li><a href="./formaParte.html">Forma Parte</a></li>
+                    <li><a href="./donaciones.html">Donaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <h1>Ingenias Mendoza</h1>
+            <p>¡Únete como voluntario y contribuye al cuidado y mantenimiento de nuestros embalses y diques! Juntos podemos proteger y preservar nuestros recursos hídricos para las generaciones futuras. 🌊💧✨</p>
+        </div>
+    </header>
+
+    <div id="form-container" class="container">
+        <form id="contact-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="name">Fecha de nacimiento:</label>
+            <input type="date" id="fechaDeNacimiento" name="fecha" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Número:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea name="message" id="message" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="success-message" class="hidden">
+        <h2>¡Enviado!</h2>
+        <p>Gracias por contactarnos. Nos pondremos en contacto contigo pronto.</p>
+    </div>
+
+    <div id="voluntarios-lista" class="container"></div>
+
+    <footer class="footer">
+        <ul class="social-icon">
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="logo-youtube"></ion-icon></a></li>
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="mail-outline"></ion-icon></a></li>
+        </ul>
+         <!-- Sección para mostrar el clima -->
+<div id="weather" class="weather-container">
+    <p id="weather-description" style="color: white;">Cargando el clima...</p>
+</div>
+
+<script>
+    const weatherApiKey = 'd1795a2cac39ca5077d24b2b3bb42b2e';  // Tu API key de OpenWeatherMap
+    const city = 'Mendoza';
+    const countryCode = 'AR';
+
+    function fetchWeather() {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${weatherApiKey}&units=metric&lang=es`)
+            .then(response => response.json())
+            .then(data => {
+                const description = data.weather[0].description;
+                const temp = data.main.temp;
+                document.getElementById('weather-description').innerText = `Clima en ${city}: ${description}, ${temp}°C`;
+            })
+            .catch(error => {
+                console.error('Error al obtener el clima:', error);
+                document.getElementById('weather-description').innerText = 'No se pudo cargar el clima.';
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchWeather);
+</script>
+
+        <ul class="menu">
+            <li class="menu-elem">
+                <a href="./index.html" class="menu-icon">Inicio</a>
+            </li>
+            <li class="menu-elem">
+                <a href="./embalses.html" class="menu-icon">Embalses</a>
+            </li>
+            <li class="menu-elem">
+                <a href="./consejos.html" class="menu-icon">Consejos</a>
+            </li>
+            <li class="menu-elem">
+                <a href="./novedades.html" class="menu-icon">Novedades</a>
+            </li>
+            <li class="menu-elem">
+                <a href="./formaParte.html" class="menu-icon">Forma parte</a>
+            </li>
+        </ul>
+        <p class="text">@2024 - Todos los derechos reservados Ingenias Mendoza</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+            const voluntariosLista = document.getElementById('voluntarios-lista');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const voluntario = {
+                    name: form.name.value,
+                    email: form.email.value,
+                    phone: form.phone.value,
+                    message: form.message.value
+                };
+
+                // Mostrar mensaje de éxito
+                successMessage.classList.remove('hidden');
+
+                // Crear un nuevo elemento para mostrar los datos del voluntario
+                const voluntarioDiv = document.createElement('div');
+                voluntarioDiv.classList.add('voluntario-item');
+                voluntarioDiv.innerText = `Nombre: ${voluntario.name}, Email: ${voluntario.email}, Número: ${voluntario.phone}, Mensaje: ${voluntario.message}`;
+
+                // Agregar el nuevo elemento al contenedor de la lista de voluntarios
+                voluntariosLista.appendChild(voluntarioDiv);
+
+                // Limpiar el formulario
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

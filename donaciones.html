@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logoIngenias.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/donaciones.css">
+    <title>Ingenias Mendoza</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        /* Estilo para el texto del clima */
+        .weather-container p {
+            color: white; /* Cambia a un color más visible si es necesario */
+        }
+    </style>
+</head>
+<body>
+    <!--header no tocar-->
+    <header class="header">
+        <div class="menu container">
+            <a href="./index.html" alt="Logo ingenias Mendoza">
+                <img class="logo" src="img/logoIngenias.png" alt="logo">
+            </a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="embalses.html">Embalses</a></li>
+                    <li><a href="consejos.html">Consejos</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="formaparte.html">Forma parte</a></li>
+                    <li><a href="donaciones.html">Donaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <h1>Ingenias Mendoza</h1>
+            <p>
+                Donar para el cuidado de nuestros embalses y diques es una inversión en el futuro de nuestro planeta y en la preservación de nuestros valiosos recursos hídricos. Con tu generosa contribución, podemos garantizar que estas fuentes de vida permanezcan limpias y saludables para las generaciones venideras. Cada donación, sin importar su tamaño, marca una diferencia significativa en la protección de nuestros ecosistemas acuáticos. Tu apoyo nos permite llevar a cabo proyectos vitales de mantenimiento, limpieza y conservación, asegurando que el agua que nos sustenta a todos siga fluyendo pura y abundante. ¡Únete a nuestra causa y contribuye a la salvaguardia de nuestros embalses y diques hoy mismo!
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <div id="form-container" class="container">
+            <form id="donation-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="phone">Número:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            
+                <label for="amount">Monto de la Donación (ARS):</label>
+                <input type="number" id="amount" name="amount" required>
+            
+                <label for="currency">Convertir a:</label>
+                <select id="currency" name="currency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <!-- Agrega más monedas si es necesario -->
+                </select>
+            
+                <label for="converted-amount">Monto convertido:</label>
+                <input type="text" id="converted-amount" readonly>
+            
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message"></textarea>
+            
+                <button type="submit">Donar</button>
+            </form>
+            
+        </div>
+        <div id="success-message" class="hidden container">
+            <h2>¡Gracias por tu donación!</h2>
+            <p>Tu contribución es muy apreciada. Nos pondremos en contacto contigo pronto.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <ul class="social-icon">
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="logo-youtube"></ion-icon></a></li>
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li class="icon-elem"><a href="#" class="icon"><ion-icon name="mail-outline"></ion-icon></a></li>
+        </ul>
+
+        <!-- Sección de Clima -->
+        <div id="weather" class="weather-container">
+            <p id="weather-description" style="color: white;">Cargando el clima...</p>
+        </div>
+ <!-- Script para mostrar el clima -->
+ <script>
+    const weatherApiKey = 'd1795a2cac39ca5077d24b2b3bb42b2e';  // Tu API key de OpenWeatherMap
+    const city = 'Mendoza';
+    const countryCode = 'AR';
+
+    function fetchWeather() {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${weatherApiKey}&units=metric&lang=es`)
+            .then(response => response.json())
+            .then(data => {
+                const description = data.weather[0].description;
+                const temp = data.main.temp;
+                document.getElementById('weather-description').innerText = `Clima en ${city}: ${description}, ${temp}°C`;
+            })
+            .catch(error => {
+                console.error('Error al obtener el clima:', error);
+                document.getElementById('weather-description').innerText = 'No se pudo cargar el clima.';
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchWeather);
+</script>
+        <ul class="menu">
+            <li class="menu-elem">
+                <a href="./index.html" class="menu-icon">Inicio</a>
+            </li>
+            <li class="menu-elem">
+                <a href="./embalses.html" class="menu-icon">Embalses</a>
+            </li>
+            <li class="menu-elem">
+                <a href="./consejos.html" class="menu-icon">Consejos</a>
+            </li>
+            <li class="menu-elem">
+                <a href="./novedades.html" class="menu-icon">Novedades</a>
+            </li>
+            <li class="menu-elem">
+                <a href="./formaParte.html" class="menu-icon">Forma parte</a>
+            </li>
+        </ul>
+        <p class="text">@2024 - Todos los derechos reservados Ingenias Mendoza</p>
+    </footer>
+    
+    <!-- Script para la conversión de moneda -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <script>
+        const exchangeRatesApiKey = '21220161773a4558a7534bb4bff60c99';  // Tu API key de Open Exchange Rates
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('donation-form');
+            const amountInput = document.getElementById('amount');
+            const currencySelect = document.getElementById('currency');
+            const convertedAmountInput = document.getElementById('converted-amount');
+    
+            function convertCurrency() {
+                const amount = parseFloat(amountInput.value);
+                const selectedCurrency = currencySelect.value;
+    
+                if (!isNaN(amount)) {
+                    fetch(`https://openexchangerates.org/api/latest.json?app_id=${exchangeRatesApiKey}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const arsToSelectedCurrencyRate = data.rates[selectedCurrency] / data.rates.ARS;
+                            const convertedAmount = (amount * arsToSelectedCurrencyRate).toFixed(2);
+                            convertedAmountInput.value = `$${convertedAmount} ${selectedCurrency}`;
+                        })
+                        .catch(error => console.error('Error al obtener la tasa de cambio:', error));
+                } else {
+                    convertedAmountInput.value = '';
+                }
+            }
+    
+            amountInput.addEventListener('input', convertCurrency);
+            currencySelect.addEventListener('change', convertCurrency);
+    
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                if (form.checkValidity()) {
+                    document.getElementById('form-container').classList.add('hidden');
+                    document.getElementById('success-message').classList.remove('hidden');
+                } else {
+                    form.reportValidity();
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

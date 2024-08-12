@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logoIngenias.png" type="image/x-icon">
+    <title>Ingenias Mendoza</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu container">
+                <a href="./index.html" alt="Logo ingenias Mendoza">
+                    <img class="logo" src="img/logoIngenias.png" alt="logo">
+                </a>
+                <input type="checkbox" id="menu"/>
+                <label for="menu">
+                    <img src="img/menu.png" class="menu-incono" alt="menu">
+                </label>
+            <nav class="navbar">
+                <ul>
+                    <li> <a href="index.html">Inicio</a></li>
+                    <li> <a href="./embalses.html">Embalses</a></li>
+                    <li> <a href="./consejos.html">Consejos</a></li>
+                    <li> <a href="./novedades.html">Novedades</a></li>
+                    <li> <a href="./formaParte.html">Forma parte</a></li>
+                    <li> <a href="./donaciones.html">Donaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <h1>Ingenias Mendoza</h1>
+            <p>
+                Cuidar el agua es cuidar la vida.
+            </p>
+        </div>
+    </header>
+
+    
+    <!--a partir de aca empezar a editar el main -->
+   
+
+<center>
+<h1>CONSEJOS </h1>
+<p>
+    El agua es un bien escazo, es por esto que debemos aprender a cuidarla.
+</p>
+<p>
+    Te dejamos algunos consejos útiles para que puedas cuidar al máximo tu consumo de agua.
+</p>
+
+</center>
+<main>
+    <center>
+        <h1>Consejos utiles para el cuidado del agua</h1>
+    </center>
+
+    <section class="general">
+<div class="general-1">
+<h1> En la ducha</h1>
+<ol>
+    <li>*No malgastes el agua realiza baños cortos</li>
+    <li>*Solo abre el agua cuando estes listo para ducharte</li>
+    <li>*Las bañeras gastan el doble de agua que una ducha convencional</li>
+    <li>*Repara posibles fugas y goteos de agua</li>
+    <li>*Existen metodos de reciclaje del agua utilizada de tus duchas</li>
+</ol>
+</div>
+<div class="consejos-1">
+   
+</div>
+</section>
+
+<section class="general">
+    <div class="general-1">
+        <h1>Lavarropas</h1>
+        <ol>
+            <li>*Remoja la ropa previamente facilitando el lavado</li>
+            <li>*Usa lavados cortos</li>
+            <li>*Utiliza cargas maximas</li>
+            <li>*Evita lavados con temperaturas elevadas</li>
+        </ol>
+    </div>
+    <div class="consejos-2"> 
+    </div>
+</section>
+
+<section class="general">
+    <div class="general-1">
+        <h1>En casa</h1>
+        <ol>
+            <li>*Rega en horarios permitidos</li>
+            <li>*No malgastes el agua</li>
+            <li>*Controla posibles fugas de agua</li>
+            <li>*Aprovecha el agua en epocas de lluvia</li>
+            <li>!! RECICLAR Y CUIDAR EL AGUA ES LA CLAVE !!</li>
+
+        </ol>
+    </div>
+    <div class="consejos-3" > 
+        
+    </div>
+</section>
+</main>
+</section>
+</center>  <footer class="footer">
+    <ul class="social-icon">
+        <li class="icon-elem">
+            <a href="#" class="icon">
+                <ion-icon name="logo-youtube"></ion-icon> <!--1 Incono descargado de una pagina--> 
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="#" class="icon">
+                <ion-icon name="logo-instagram"></ion-icon> <!-- 2 Incono descargado de una pagina--> 
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="#" class="icon">
+                <ion-icon name="logo-whatsapp"></ion-icon><!-- 3 Incono descargado de una pagina--> 
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="#" class="icon">
+                <ion-icon name="logo-facebook"></ion-icon><!-- 4 Incono descargado de una pagina--> 
+            </a>
+        </li>
+        <li class="icon-elem">
+            <a href="#" class="icon">
+                <ion-icon name="mail-outline"></ion-icon><!-- 5 Incono descargado de una pagina--> 
+            </a>
+        </li>
+        
+    </ul>
+           <!-- Sección de Clima -->
+           <div id="weather" class="weather-container">
+            <p id="weather-description" style="color: white;">Cargando el clima...</p>
+        </div>
+ <!-- Script para mostrar el clima -->
+ <script>
+    const weatherApiKey = 'd1795a2cac39ca5077d24b2b3bb42b2e';  // Tu API key de OpenWeatherMap
+    const city = 'Mendoza';
+    const countryCode = 'AR';
+
+    function fetchWeather() {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${weatherApiKey}&units=metric&lang=es`)
+            .then(response => response.json())
+            .then(data => {
+                const description = data.weather[0].description;
+                const temp = data.main.temp;
+                document.getElementById('weather-description').innerText = `Clima en ${city}: ${description}, ${temp}°C`;
+            })
+            .catch(error => {
+                console.error('Error al obtener el clima:', error);
+                document.getElementById('weather-description').innerText = 'No se pudo cargar el clima.';
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchWeather);
+</script>
+    <ul class="menu">
+        <li class="menu-elem">
+            <a href="./index.html" class="menu-icon">Inicio</a>
+        </li>
+        <li class="menu-elem">
+            <a href="./embalses.html" class="menu-icon">Embalses</a>
+        </li>
+        <li class="menu-elem">
+            <a href="./consejos.html" class="menu-icon">Consejos</a>
+        </li>
+        <li class="menu-elem">
+            <a href="./novedades.html" class="menu-icon">Novedades</a>
+        </li>
+        <li class="menu-elem">
+            <a href="./formaParte.html" class="menu-icon">Forma parte</a>
+        </li>
+    </ul>
+    <p class="text">@2024 - Todos los derechos reservados Ingenias Mendoza</p>
+</footer>
+<!--Area para guardar los scripts de los iconos-->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

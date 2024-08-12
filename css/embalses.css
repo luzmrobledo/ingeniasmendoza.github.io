@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+
+/*.hidden {
+    display: none;
+}
+*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: linear-gradient(
+        rgba(23, 23, 23, 0.7),
+        rgba(23, 23, 23, 0.7)),
+        url(img/mendoza.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 3rem ;
+    height: 3rem;
+    border-radius: 50%;
+    }
+    
+.navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFDFC;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #1062a4;
+}
+
+.menu-icono{
+    width:15px;
+}
+
+#menu {
+    display: none;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content h1 {
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #c5c5c5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
+#ser-embalses{
+    background-color: rgb(240, 240, 240);
+    color: rgb(50,50,50);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#ser-embalses .img-container{
+    padding: 50px 12px;
+}
+
+#ser-embalses p{
+    color: rgb(50, 50, 50);
+}
+
+#ser-embalses h2{
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.color-emb{
+    color: blueviolet;
+}
+
+
+/*Estilos para la seccion de Nuestros embalses*/
+#nuestros-embalses{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#nuestros-embalses .container{
+    padding: 50px 12px;
+}
+
+#nuestros-embalses p{
+    color: #ccc;
+}
+
+#nuestros-embalses h2{
+    margin-top: 0;
+    font-size: 2.5em;
+    color: #62baca;
+}
+
+/*Diseño de las cartas*/
+.carta-embalse{
+    background-position: center, center;
+    background-size: cover;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.carta-embalse:nth-child(1){
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("https://aquabook.irrigacion.gov.ar/files/upload/contenidos/4_267/600_1245.JPG");
+}
+
+.carta-embalse:nth-child(2){
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://tse3.mm.bing.net/th/id/OIP.UfriuM92quUIMCZvCk9A8wAAAA?rs=1&pid=ImgDetMain");
+}
+
+.carta-embalse:nth-child(3){
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://tse4.mm.bing.net/th/id/OIP.EUGotyFu5lLSxtvyWg2VwgHaE6?rs=1&pid=ImgDetMain");
+}
+
+.carta-embalse:nth-child(4){
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://www.losandes.com.ar/resizer/HbK4DIv81duKeplXqKWf3Ia2EzQ=/0x0:0x0/980x640/filters:quality(80):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/XT4FUWTP7RECDMECXKFWFKILBA.jpg");
+}
+
+.carta-embalse:hover{
+    transform: translateY(-5px); /*añadimos un efecto*/
+}
+
+/*ESTILOS SECCION EMBALSES Y SUS PROPOSITOS*/
+.container-image{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1110px;
+    margin: auto;
+}
+
+.card{
+    width: calc(33.333% - 40px); /*tres columnas con margenes*/
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 20px rbga(0,0,0,0.4);
+    transform: translateY(-5px)
+}
+
+.card img{
+    width: 100%;
+    height: 210px;
+}
+
+.card .contenido{
+    padding: 15px;
+    text-align: center;
+}
+
+.card .contenido p{
+    line-height: 1.5;
+    color: #1f6cab;
+}
+
+.card .contenido h3{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.card .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #323337;
+    border: 1px solid black;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .contenido a:hover{
+    background: #1f6cab;
+    color: white;
+}
+
+h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: #323337;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p{
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px 0;
+}
+
+/*ESTILOS PARA EL FOOTER*/
+footer{
+    height: max-content;
+    width: 100%;
+}
+
+.footer{
+    position: relative;
+    width: 100%;
+    background:#1f6cab;
+    min-height: max-content;
+    padding: 20px 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.social-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 5px;
+    flex-wrap: wrap;
+}
+
+.icon-elem{
+    list-style: none;
+}
+
+.icon{
+    color: #c7dced;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.incon:hover{
+    transform: translateY(-10px);
+}
+
+.menu{
+    display: flex; /*movemos los elementos de la lista en una fila*/
+    justify-content: space-between; /*centramos los elementos*/
+    position: relative;
+    align-items: center; /*centramos los elementos*/
+    margin: 10px 0;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.menu-elem{
+    list-style: none; /*le quitamos los puntos a la lista*/
+}
+.menu-icon{ /*Editamos la lista del footer Inicio Equipo..*/
+    color: #c7dced;;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.75;
+    transition: 0.3s;
+}
+.text{
+    color: #c7dced;;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+/*Movimiento para los iconos del footer*/
+.icon:hover{
+  transform: translateY(-10px);  /*movimiento de los iconos hacia arriba*/
+}
+
+.menu-icon:hover{
+    opacity: 1;
+}
+
+/* Media Queries para Responsiveness */
+@media (max-width: 991px) {
+    .menu {
+        padding: 30px;
+    }
+    .menu label {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+        flex-direction: column;
+    }
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar ul li {
+        width: 100%;
+    }
+    #menu-toggle:checked + .menu-icon + .navbar {
+        display: flex;
+    }
+    .header {
+        min-height: 50vh;
+    }
+    .header-content {
+        padding: 100px 30px;
+    }
+    .header-content p {
+        padding: 0;
+    }
+    .nosotras-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .informacion {
+        padding: 30px;
+    }
+    .proyectos-group {
+        flex-direction: column;
+    }
+    .general {
+        flex-direction: column;
+    }
+    .general-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    .general-2, .general-3 {
+        display: none;
+    }
+}
+@media(min-width:992px){
+    .menu{
+        justify-content: center;
+        }
+    }
